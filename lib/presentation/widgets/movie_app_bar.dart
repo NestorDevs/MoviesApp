@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:movie_app/common/constants/size_constants.dart';
-import 'package:movie_app/common/screenutil/screen_util.dart';
-import 'package:movie_app/common/extensions/size_extensions.dart';
-import 'package:movie_app/presentation/widgets/logo.dart';
+part of 'widgets.dart';
 
 class MovieAppBar extends StatelessWidget {
   @override

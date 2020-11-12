@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:movie_app/common/constants/size_constants.dart';
 import 'package:movie_app/common/screenutil/screen_util.dart';
-import 'package:movie_app/common/extensions/size_extensions.dart';
+import 'package:movie_app/common/extensions/extensions.dart';
 import 'package:movie_app/domain/entities/movie_entity.dart';
 import 'package:movie_app/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
 

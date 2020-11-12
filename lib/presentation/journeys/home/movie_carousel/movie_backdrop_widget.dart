@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:movie_app/common/extensions/size_extensions.dart';
+import 'package:movie_app/common/extensions/extensions.dart';
 import 'package:movie_app/common/constants/size_constants.dart';
 import 'package:movie_app/common/screenutil/screen_util.dart';
 import 'package:movie_app/data/core/api_constants.dart';

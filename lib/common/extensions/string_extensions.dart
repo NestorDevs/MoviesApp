@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:movie_app/presentation/app_localizations.dart';
+part of 'extensions.dart';
 
 extension StringExtension on String {
   String intelliTrim() {

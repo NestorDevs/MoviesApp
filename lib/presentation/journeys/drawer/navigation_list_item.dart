@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/extensions/size_extensions.dart';
+import 'package:movie_app/common/extensions/extensions.dart';
 
 class NavigationListItem extends StatelessWidget {
   final String title;

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../common/extensions/size_extensions.dart';
+part of 'widgets.dart';
 
 class Logo extends StatelessWidget {
   final double height;

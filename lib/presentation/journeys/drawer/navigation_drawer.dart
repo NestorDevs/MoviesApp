@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:wiredash/wiredash.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:movie_app/common/constants/languages.dart';
 import 'package:movie_app/common/constants/size_constants.dart';
 import 'package:movie_app/common/constants/translation_constants.dart';
-import 'package:movie_app/common/extensions/size_extensions.dart';
-import 'package:movie_app/common/extensions/string_extensions.dart';
+import 'package:movie_app/common/extensions/extensions.dart';
 import 'package:movie_app/presentation/blocs/language/language_bloc.dart';
 import 'package:movie_app/presentation/journeys/drawer/navigation_expanded_list_item.dart';
 import 'package:movie_app/presentation/journeys/drawer/navigation_list_item.dart';
-import 'package:movie_app/presentation/widgets/logo.dart';
+import 'package:movie_app/presentation/widgets/widgets.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer();
@@ -57,13 +58,35 @@ class NavigationDrawer extends StatelessWidget {
             ),
             NavigationListItem(
               title: TranslationConstants.feedback.t(context),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pop();
+                Wiredash.of(context).show();
+              },
             ),
             NavigationListItem(
               title: TranslationConstants.about.t(context),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pop();
+                //2
+                _showDialog(context);
+              },
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  void _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      child: AppDialog(
+        title: TranslationConstants.about,
+        description: TranslationConstants.aboutDescription,
+        buttonText: TranslationConstants.okay,
+        image: Image.asset(
+          'assets/pngs/tmdb_logo.png',
+          height: Sizes.dimen_32.h,
         ),
       ),
     );
