@@ -59,8 +59,11 @@ Future init() async {
         getPlayingNow: getItInstance(),
       ));
 
-  getItInstance.registerSingleton<MovieDetailBloc>(
-      MovieDetailBloc(getMovieDetail: getItInstance()));
+  getItInstance.registerFactory(
+    () => MovieDetailBloc(
+      getMovieDetail: getItInstance(),
+    ),
+  );
 
   getItInstance.registerSingleton<LanguageBloc>(LanguageBloc());
 }
