@@ -11,7 +11,7 @@ class GetTrending extends Usecase<List<MovieEntity>, NoParams> {
   GetTrending(this.repository);
 
   @override
-  Future<Either<AppError, List<MovieEntity>>> call(NoParams params) async {
+  Future<Either<AppError, List<MovieEntity>>> call(NoParams noParams) async {
     return await repository.getTrending();
   }
 }

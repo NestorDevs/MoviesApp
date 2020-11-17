@@ -1,4 +1,5 @@
 import 'package:movie_app/data/core/api_client.dart';
+import 'package:movie_app/data/models/movie_detail_model.dart';
 import 'package:movie_app/data/models/movie_model.dart';
 import 'package:movie_app/data/models/movies_result_model.dart';
 
@@ -33,5 +34,13 @@ class MovieRemoteDataSource implements IMovieRemoteDataSource {
   Future<List<MovieModel>> getPlayingNow() async {
     final response = await _client.get('movie/now_playing');
     return MoviesResultModel.fromJson(response).movies;
+  }
+
+  @override
+  Future<MovieDetailModel> getMovieDetail(int id) async {
+    final response = await _client.get('movie/$id');
+    final movie = MovieDetailModel.fromJson(response);
+    print(movie);
+    return movie;
   }
 }
