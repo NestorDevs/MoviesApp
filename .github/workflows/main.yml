@@ -1,9 +1,6 @@
-on:
-  push:
-    tags:
-      - "*"
-name: Build and Release apk
+on: push: tags: - '*'
 
+name: Build and Release apk
 jobs:
   build:
     name: Build APK
@@ -24,4 +21,4 @@ jobs:
         with:
           artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
           token: ${{ secrets.GH_TOKEN }}
-          commit: main
+
