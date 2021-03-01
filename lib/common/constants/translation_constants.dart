@@ -15,4 +15,7 @@ class TranslationConstants {
   static const String okay = 'okay';
   static const String aboutDescription = 'aboutDescription';
   static const String noMovies = 'noMovies';
+  static const String cast = 'cast';
+  static const String watchTrailers = 'watchTrailers';
+  static const String noMovieSearched = 'noMovieSearched';
 }

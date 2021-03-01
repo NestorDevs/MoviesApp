@@ -1,9 +1,11 @@
-import 'package:movie_app/data/core/api_client.dart';
-import 'package:movie_app/data/models/movie_detail_model.dart';
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/models/movies_result_model.dart';
-
+import '../core/api_client.dart';
+import '../models/movie_model.dart';
+import '../models/video_model.dart';
 import 'i_movie_remote_data_source.dart';
+import '../models/movie_detail_model.dart';
+import '../models/video_result_model.dart';
+import '../models/movies_result_model.dart';
+import '../models/cast_crew_result_data_model.dart';
 
 class MovieRemoteDataSource implements IMovieRemoteDataSource {
   final ApiClient _client;
@@ -42,5 +44,30 @@ class MovieRemoteDataSource implements IMovieRemoteDataSource {
     final movie = MovieDetailModel.fromJson(response);
     print(movie);
     return movie;
+  }
+
+  @override
+  Future<List<CastModel>> getCastCrew(int id) async {
+    final response = await _client.get('movie/$id/credits');
+    final cast = CastCrewResultModel.fromJson(response).cast;
+    print(cast);
+    return cast;
+  }
+
+  @override
+  Future<List<VideoModel>> getVideos(int id) async {
+    final response = await _client.get('movie/$id/videos');
+    final video = VideoResultModel.fromJson(response).videos;
+    print(video);
+    return video;
+  }
+
+  @override
+  Future<List<MovieModel>> getSearchedMovies(String searchTerm) async {
+    final response = await _client.get('search/movie', params: {
+      'query': searchTerm,
+    });
+    final movies = MoviesResultModel.fromJson(response).movies;
+    return movies;
   }
 }

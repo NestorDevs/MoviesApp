@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/di/get_it.dart';
-import 'package:movie_app/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
-import 'package:movie_app/presentation/blocs/movie_carousel/movie_carousel_bloc.dart';
-import 'package:movie_app/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart';
-import 'package:movie_app/presentation/journeys/drawer/navigation_drawer.dart';
-import 'package:movie_app/presentation/widgets/widgets.dart';
 
-import 'movie_carousel/movie_carousel_widget.dart';
+import '../../../di/get_it.dart';
+import '../../widgets/widgets.dart';
+import '../drawer/navigation_drawer.dart';
 import 'movie_tabbed/movie_tabbed_widget.dart';
+import 'movie_carousel/movie_carousel_widget.dart';
+import '../../blocs/search_movie/search_movie_bloc.dart';
+import '../../blocs/movie_tabbed/movie_tabbed_bloc.dart';
+import '../../blocs/movie_carousel/movie_carousel_bloc.dart';
+import '../../blocs/movie_backdrop/movie_backdrop_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MovieCarouselBloc movieCarouselBloc;
   MovieBackdropBloc movieBackdropBloc;
   MovieTabbedBloc movieTabbedBloc;
+  SearchMovieBloc searchMovieBloc;
 
   @override
   void initState() {
@@ -26,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     movieCarouselBloc = getItInstance<MovieCarouselBloc>();
     movieBackdropBloc = movieCarouselBloc.movieBackdropBloc;
     movieTabbedBloc = getItInstance<MovieTabbedBloc>();
+    searchMovieBloc = getItInstance<SearchMovieBloc>();
     movieCarouselBloc.add(CarouselLoadEvent());
   }
 
@@ -34,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     movieCarouselBloc?.close();
     movieBackdropBloc?.close();
     movieTabbedBloc?.close();
+    searchMovieBloc?.close();
     super.dispose();
   }
 
@@ -44,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         BlocProvider(create: (_) => movieCarouselBloc),
         BlocProvider(create: (_) => movieBackdropBloc),
         BlocProvider(create: (_) => movieTabbedBloc),
+        BlocProvider(create: (_) => searchMovieBloc),
       ],
       child: Scaffold(
         drawer: const NavigationDrawer(),

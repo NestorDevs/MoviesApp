@@ -26,7 +26,14 @@ class MovieAppBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(
+                  BlocProvider.of<SearchMovieBloc>(context),
+                ),
+              );
+            },
             icon: Icon(
               Icons.search,
               color: Colors.white,
