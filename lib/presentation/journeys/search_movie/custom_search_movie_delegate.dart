@@ -10,9 +10,7 @@ import '../../blocs/search_movie/search_movie_bloc.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   final SearchMovieBloc searchMovieBloc;
-
   CustomSearchDelegate(this.searchMovieBloc);
-
   @override
   ThemeData appBarTheme(BuildContext context) {
     return Theme.of(context).copyWith(
@@ -54,7 +52,6 @@ class CustomSearchDelegate extends SearchDelegate {
     searchMovieBloc.add(
       SearchTermChangedEvent(query),
     );
-
     return BlocBuilder<SearchMovieBloc, SearchMovieState>(
       builder: (context, state) {
         if (state is SearchMovieError) {
