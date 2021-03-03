@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of '../common.dart';
 
 extension NumExtension on num {
   String convertToPercentageString() {

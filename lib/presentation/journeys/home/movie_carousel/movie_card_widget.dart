@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:movie_app/data/core/api_constants.dart';
-import 'package:movie_app/common/constants/size_constants.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
-import 'package:movie_app/presentation/journeys/movie_detail/movie_detail_arguments.dart';
-import 'package:movie_app/presentation/journeys/movie_detail/movie_detail_screen.dart';
+import '../../../../common/common.dart';
+import '../../../../data/core/api_constants.dart';
+import '../../movie_detail/movie_detail_screen.dart';
+import '../../movie_detail/movie_detail_arguments.dart';
 
 class MovieCardWidget extends StatelessWidget {
   final int movieId;

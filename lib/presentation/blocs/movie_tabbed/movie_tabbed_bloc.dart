@@ -2,14 +2,15 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:movie_app/domain/entities/app_error.dart';
-import 'package:movie_app/domain/entities/movie_entity.dart';
-import 'package:movie_app/domain/entities/no_params.dart';
-import 'package:movie_app/domain/usecases/get_coming_soon.dart';
-import 'package:movie_app/domain/usecases/get_playing_now.dart';
-import 'package:movie_app/domain/usecases/get_popular.dart';
+import 'package:equatable/equatable.dart';
+
+import '../../../domain/entities/no_params.dart';
+import '../../../domain/entities/app_error.dart';
+import '../../../domain/usecases/get_popular.dart';
+import '../../../domain/entities/movie_entity.dart';
+import '../../../domain/usecases/get_coming_soon.dart';
+import '../../../domain/usecases/get_playing_now.dart';
 
 part 'movie_tabbed_event.dart';
 part 'movie_tabbed_state.dart';

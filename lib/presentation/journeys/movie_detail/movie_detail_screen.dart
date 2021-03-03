@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/presentation/blocs/cast/cast_bloc.dart';
-import 'package:movie_app/presentation/blocs/videos/videos_bloc.dart';
-import 'package:movie_app/presentation/journeys/movie_detail/videos_widget.dart';
 
 import 'big_poster.dart';
-import '../../../di/get_it.dart';
 import 'cast_widget.dart';
+import 'videos_widget.dart';
+import '../../../di/get_it.dart';
+import '../../../common/common.dart';
 import 'movie_detail_arguments.dart';
-import '../../../common/extensions/extensions.dart';
-import '../../../common/constants/size_constants.dart';
+import '../../blocs/cast/cast_bloc.dart';
+import '../../blocs/videos/videos_bloc.dart';
+import '../../blocs/favorite/favorite_bloc.dart';
 import '../../blocs/movie_detail/movie_detail_bloc.dart';
-import '../../../common/constants/translation_constants.dart';
 
 class MovieDetailScreen extends StatefulWidget {
   final MovieDetailArguments movieDetailArguments;
@@ -30,6 +29,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
   MovieDetailBloc _movieDetailBloc;
   CastBloc _castBloc;
   VideosBloc _videosBloc;
+  FavoriteBloc _favoriteBloc;
 
   @override
   void initState() {
@@ -37,6 +37,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
     _movieDetailBloc = getItInstance<MovieDetailBloc>();
     _castBloc = _movieDetailBloc.castBloc;
     _videosBloc = _movieDetailBloc.videosBloc;
+    _favoriteBloc = _movieDetailBloc.favoriteBloc;
     _movieDetailBloc.add(
       MovieDetailLoadEvent(
         widget.movieDetailArguments.movieId,
@@ -49,6 +50,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
     _movieDetailBloc?.close();
     _castBloc?.close();
     _videosBloc?.close();
+    _favoriteBloc?.close();
     super.dispose();
   }
 
@@ -60,6 +62,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
           BlocProvider.value(value: _movieDetailBloc),
           BlocProvider.value(value: _castBloc),
           BlocProvider.value(value: _videosBloc),
+          BlocProvider.value(value: _favoriteBloc),
         ],
         child: BlocBuilder<MovieDetailBloc, MovieDetailState>(
           builder: (context, state) {

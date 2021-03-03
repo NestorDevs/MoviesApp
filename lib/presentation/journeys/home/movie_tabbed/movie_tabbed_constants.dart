@@ -1,5 +1,5 @@
-import 'package:movie_app/common/constants/translation_constants.dart';
 import 'tab.dart';
+import '../../../../common/constants/translation_constants.dart';
 
 class MovieTabbedConstants {
   static const List<Tab> movieTabs = [

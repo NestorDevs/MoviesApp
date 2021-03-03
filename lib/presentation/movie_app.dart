@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:movie_app/common/constants/languages.dart';
-import 'package:movie_app/common/screenutil/screen_util.dart';
-import 'package:movie_app/di/get_it.dart';
-import 'package:movie_app/presentation/app_localizations.dart';
-import 'package:movie_app/presentation/blocs/language/language_bloc.dart';
-import 'package:movie_app/presentation/themes/app_color.dart';
-import 'package:movie_app/presentation/themes/theme_text.dart';
-import 'package:movie_app/presentation/wiredash_app.dart';
 
+import '../di/get_it.dart';
+import 'wiredash_app.dart';
+import '../common/common.dart';
+import 'themes/app_color.dart';
+import 'themes/theme_text.dart';
+import 'app_localizations.dart';
 import 'journeys/home/home_screen.dart';
+import 'blocs/language/language_bloc.dart';
 
 class MovieApp extends StatefulWidget {
   @override
@@ -25,6 +24,7 @@ class _MovieAppState extends State<MovieApp> {
   void initState() {
     super.initState();
     _languageBloc = getItInstance<LanguageBloc>();
+    _languageBloc.add(LoadPreferredLanguageEvent());
   }
 
   @override

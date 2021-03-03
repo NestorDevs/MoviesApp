@@ -1,12 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/constants/size_constants.dart';
-import 'package:movie_app/common/screenutil/screen_util.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
-import 'package:movie_app/presentation/themes/theme_text.dart';
-import 'package:movie_app/data/core/api_constants.dart';
-import 'package:movie_app/domain/entities/movie_detail_entity.dart';
 
+import '../../../common/common.dart';
+import '../../../data/core/api_constants.dart';
+import '../../../domain/entities/movie_detail_entity.dart';
+import '../../themes/theme_text.dart';
 import 'movie_detail_app_bar.dart';
 
 class BigPoster extends StatelessWidget {
@@ -60,7 +58,7 @@ class BigPoster extends StatelessWidget {
           left: Sizes.dimen_16.w,
           right: Sizes.dimen_16.w,
           top: ScreenUtil.statusBarHeight + Sizes.dimen_4.h,
-          child: MovieDetailAppBar(),
+          child: MovieDetailAppBar(movieDetailEntity: movie),
         ),
       ],
     );

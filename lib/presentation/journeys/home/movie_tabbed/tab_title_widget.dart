@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/constants/size_constants.dart';
-import 'package:movie_app/presentation/themes/app_color.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
-import 'package:movie_app/presentation/themes/theme_text.dart';
+
+import '../../../../common/common.dart';
+import '../../../themes/app_color.dart';
+import '../../../themes/theme_text.dart';
 
 class TabTitleWidget extends StatelessWidget {
   final String title;

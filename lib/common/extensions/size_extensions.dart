@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of '../common.dart';
 
 extension SizeExtensions on num {
   num get w => ScreenUtil().setWidth(this);

@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/constants/size_constants.dart';
-import 'package:movie_app/common/constants/translation_constants.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import '../../../common/common.dart';
 import 'watch_video_arguments.dart';
 import '../../../domain/entities/video_entity.dart';
 

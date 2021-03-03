@@ -4,10 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:movie_app/domain/entities/app_error.dart';
-import 'package:movie_app/domain/entities/movie_entity.dart';
-import 'package:movie_app/domain/entities/movie_search_params.dart';
-import 'package:movie_app/domain/usecases/search_movies.dart';
+
+import '../../../domain/entities/app_error.dart';
+import '../../../domain/entities/movie_entity.dart';
+import '../../../domain/usecases/search_movies.dart';
+import '../../../domain/entities/movie_search_params.dart';
 
 part 'search_movie_event.dart';
 part 'search_movie_state.dart';

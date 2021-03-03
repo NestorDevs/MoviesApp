@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/presentation/themes/app_color.dart';
 import 'package:wiredash/wiredash.dart';
+
+import 'themes/app_color.dart';
 
 class WiredashApp extends StatelessWidget {
   final navigatorKey;

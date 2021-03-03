@@ -1,4 +1,4 @@
-import 'dart:ui';
+part of '../common.dart';
 
 class ScreenUtil {
   static ScreenUtil _instance;

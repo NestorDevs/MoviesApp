@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
+
+import '../../../common/common.dart';
 
 class NavigationListItem extends StatelessWidget {
   final String title;

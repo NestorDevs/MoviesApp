@@ -3,12 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'search_movie_card.dart';
 import '../../widgets/widgets.dart';
+import '../../../common/common.dart';
 import '../../themes/app_color.dart';
 import '../../themes/theme_text.dart';
-import '../../../common/extensions/extensions.dart';
-import '../../../common/constants/size_constants.dart';
 import '../../blocs/search_movie/search_movie_bloc.dart';
-import '../../../common/constants/translation_constants.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   final SearchMovieBloc searchMovieBloc;

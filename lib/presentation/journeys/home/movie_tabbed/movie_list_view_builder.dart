@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/domain/entities/movie_entity.dart';
-import 'package:movie_app/common/extensions/extensions.dart';
-import 'package:movie_app/presentation/journeys/home/movie_tabbed/movie_tab_card_widget.dart';
+
+import 'movie_tab_card_widget.dart';
+import '../../../../common/common.dart';
+import '../../../../domain/entities/movie_entity.dart';
 
 class MovieListViewBuilder extends StatelessWidget {
   final List<MovieEntity> movies;

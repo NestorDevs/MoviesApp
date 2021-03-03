@@ -5,7 +5,6 @@ import '../../widgets/widgets.dart';
 import '../../blocs/videos/videos_bloc.dart';
 import '../watch_videos/watch_video_screen.dart';
 import '../watch_videos/watch_video_arguments.dart';
-import '../../../common/extensions/extensions.dart';
 import '../../../common/constants/translation_constants.dart';
 
 class VideosWidget extends StatelessWidget {

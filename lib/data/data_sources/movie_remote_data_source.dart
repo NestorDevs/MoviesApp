@@ -68,6 +68,7 @@ class MovieRemoteDataSource implements IMovieRemoteDataSource {
       'query': searchTerm,
     });
     final movies = MoviesResultModel.fromJson(response).movies;
+    print(movies);
     return movies;
   }
 }

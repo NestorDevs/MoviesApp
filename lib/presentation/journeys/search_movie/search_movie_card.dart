@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import '../../../common/common.dart';
 import '../../themes/theme_text.dart';
 import '../../../data/core/api_constants.dart';
 import '../movie_detail/movie_detail_screen.dart';
-import '../../../common/extensions/extensions.dart';
 import '../../../domain/entities/movie_entity.dart';
 import '../movie_detail/movie_detail_arguments.dart';
-import '../../../common/constants/size_constants.dart';
 
 class SearchMovieCard extends StatelessWidget {
   final MovieEntity movie;

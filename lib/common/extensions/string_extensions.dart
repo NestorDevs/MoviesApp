@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of '../common.dart';
 
 extension StringExtension on String {
   String intelliTrim() {
