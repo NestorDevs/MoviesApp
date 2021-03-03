@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wiredash/wiredash.dart';
 
-import 'navigation_list_item.dart';
-import '../../widgets/widgets.dart';
 import '../../../common/common.dart';
-import '../favorite/favorite_screen.dart';
-import 'navigation_expanded_list_item.dart';
 import '../../blocs/language/language_bloc.dart';
+import '../../widgets/widgets.dart';
+import 'navigation_expanded_list_item.dart';
+import 'navigation_list_item.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer();
@@ -42,8 +41,7 @@ class NavigationDrawer extends StatelessWidget {
             NavigationListItem(
               title: TranslationConstants.favoriteMovies.t(context),
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => FavoriteScreen()));
+                Navigator.of(context).pushNamed(RouteList.favorite);
               },
             ),
             NavigationExpandedListItem(

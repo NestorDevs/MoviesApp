@@ -8,6 +8,7 @@ import '../presentation/app_localizations.dart';
 export 'package:movie_app/common/constants/languages.dart';
 export 'package:movie_app/common/constants/size_constants.dart';
 export 'package:movie_app/common/constants/translation_constants.dart';
+export 'package:movie_app/common/constants/route_constants.dart';
 
 //* Extensions
 part 'extensions/num_extensions.dart';

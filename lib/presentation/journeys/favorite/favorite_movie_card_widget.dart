@@ -1,12 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../common/common.dart';
 import '../../../data/core/api_constants.dart';
-import '../../blocs/favorite/favorite_bloc.dart';
-import '../movie_detail/movie_detail_screen.dart';
 import '../../../domain/entities/movie_entity.dart';
+import '../../blocs/favorite/favorite_bloc.dart';
 import '../movie_detail/movie_detail_arguments.dart';
 
 class FavoriteMovieCardWidget extends StatelessWidget {
@@ -28,13 +27,8 @@ class FavoriteMovieCardWidget extends StatelessWidget {
         ),
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => MovieDetailScreen(
-                  movieDetailArguments: MovieDetailArguments(movie.id),
-                ),
-              ),
-            );
+            Navigator.of(context).pushNamed(RouteList.movieDetail,
+                arguments: MovieDetailArguments(movie.id));
           },
           child: Stack(
             children: [
